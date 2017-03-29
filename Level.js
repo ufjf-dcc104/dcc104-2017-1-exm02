@@ -24,6 +24,13 @@ Level.prototype.desenhar = function (ctx) {
     }
 };
 
+Level.prototype.colidiuCom = function (alvo, resolveColisao) {
+    for (var i = 0; i < this.sprites.length; i++) {
+      if(this.sprites[i].colidiuCom(alvo)){
+        resolveColisao(this.sprites[i], alvo);
+      }
+    }
+};
 
 
 

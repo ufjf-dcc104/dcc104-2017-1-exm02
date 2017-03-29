@@ -21,7 +21,22 @@ Sprite.prototype.mover = function (dt) {
   this.vy = this.vy + (this.ay+this.g)*dt;
   this.x = this.x + this.vx*dt;
   this.y = this.y + this.vy*dt;
-
-
-
 };
+
+Sprite.prototype.colidiuCom = function (alvo) {
+  if(this.x+15 < alvo.x) return false;
+  if(this.x > alvo.x+15) return false;
+  if(this.y+15 < alvo.y) return false;
+  if(this.y > alvo.y+15) return false;
+  return true;
+};
+
+
+
+
+
+
+
+
+
+//

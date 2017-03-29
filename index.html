@@ -43,6 +43,13 @@
 
         azul.mover(dt);
         level.mover(dt);
+
+        level.colidiuCom(azul,
+          function(inimigo, alvo){
+            inimigo.color = "red";
+          }
+        );
+
         azul.desenhar(ctx);
         level.desenhar(ctx);
 
