@@ -8,6 +8,9 @@ Level.prototype.init = function () {
     var inimigo = new Sprite();
     inimigo.x = 120+20*i;
     inimigo.y = 10;
+    inimigo.width = 10+i*5;
+    inimigo.height = 10+i*5;
+    inimigo.vang = 300*i;
     this.sprites.push(inimigo);
   }
 };
