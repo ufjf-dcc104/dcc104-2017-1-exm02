@@ -1,4 +1,5 @@
 function Sprite(){
+  this.g = 0;
   this.x = 0;
   this.y = 0;
   this.vx = 0;
@@ -17,7 +18,7 @@ Sprite.prototype.desenhar = function (ctx) {
 
 Sprite.prototype.mover = function (dt) {
   this.vx = this.vx + this.ax*dt;
-  this.vy = this.vy + (this.ay+60)*dt;
+  this.vy = this.vy + (this.ay+this.g)*dt;
   this.x = this.x + this.vx*dt;
   this.y = this.y + this.vy*dt;
 
