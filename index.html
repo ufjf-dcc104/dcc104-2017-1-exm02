@@ -56,6 +56,7 @@
 
         azul.desenhar(ctx);
         level.desenhar(ctx);
+        level.colidiuComTiros();
 
         anterior = atual;
       }
@@ -63,10 +64,10 @@
       addEventListener("keydown", function(e){
         if(fuel<=0) return;
         switch (e.keyCode) {
-          /*case 32:
-            azul.vy = azul.vy -80;
+          case 32:
+            level.fire(azul);
             break;
-            */
+
           case 37:
             azul.vang = -100;
             break;

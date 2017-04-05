@@ -12,6 +12,7 @@ function Sprite(){
   this.angle = 0;
   this.vang = 0;
   this.color = "blue";
+  this.cooldown = 0;
 }
 
 Sprite.prototype.desenhar = function (ctx) {
@@ -38,6 +39,11 @@ Sprite.prototype.mover = function (dt) {
   this.x = this.x + this.vx*dt;
   this.y = this.y + this.vy*dt;
   this.angle = this.angle + this.vang*dt;
+  if(this.cooldown>0) {
+    this.cooldown -= dt;
+  } else {
+    this.cooldown = 0;
+  }
 };
 
 Sprite.prototype.moverAng = function (dt) {
@@ -48,6 +54,11 @@ Sprite.prototype.moverAng = function (dt) {
   this.vy = this.vy + (this.ay+this.g)*dt;
   this.x = this.x + this.vx*dt;
   this.y = this.y + this.vy*dt;
+  if(this.cooldown>0) {
+    this.cooldown -= dt;
+  } else {
+    this.cooldown = 0;
+  }
 };
 
 
