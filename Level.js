@@ -11,6 +11,7 @@ Level.prototype.init = function () {
     inimigo.width = 10+i*5;
     inimigo.height = 10+i*5;
     inimigo.vang = 300*i;
+    inimigo.am = 00;
     this.sprites.push(inimigo);
   }
 };
@@ -18,6 +19,12 @@ Level.prototype.init = function () {
 Level.prototype.mover = function (dt) {
     for (var i = 0; i < this.sprites.length; i++) {
       this.sprites[i].mover(dt);
+    }
+};
+
+Level.prototype.moverAng = function (dt) {
+    for (var i = 0; i < this.sprites.length; i++) {
+      this.sprites[i].moverAng(dt);
     }
 };
 
@@ -38,6 +45,11 @@ Level.prototype.colidiuCom = function (alvo, resolveColisao) {
 Level.prototype.perseguir = function (alvo, dt) {
   for (var i = 0; i < this.sprites.length; i++) {
     this.sprites[i].perseguir(alvo,dt);
+  }
+};
+Level.prototype.perseguirAng = function (alvo, dt) {
+  for (var i = 0; i < this.sprites.length; i++) {
+    this.sprites[i].perseguirAng(alvo,dt);
   }
 };
 
