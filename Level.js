@@ -13,6 +13,7 @@ Level.prototype.init = function () {
     inimigo.height = 10+i*5;
     inimigo.vang = 300*i;
     inimigo.am = 00;
+    inimigo.imgkey = "enemy";
     this.sprites.push(inimigo);
   }
 };
@@ -59,6 +60,14 @@ Level.prototype.desenhar = function (ctx) {
       this.shots[i].desenhar(ctx);
     }
 };
+Level.prototype.desenharImg = function (ctx) {
+    for (var i = 0; i < this.sprites.length; i++) {
+      this.sprites[i].desenharImg(ctx, this.imageLib.images[this.sprites[i].imgkey]);
+    }
+    for (var i = 0; i < this.shots.length; i++) {
+      this.shots[i].desenharImg(ctx, this.imageLib.images[this.shots[i].imgkey]);
+    }
+};
 
 Level.prototype.colidiuCom = function (alvo, resolveColisao) {
     for (var i = 0; i < this.sprites.length; i++) {
@@ -88,6 +97,7 @@ Level.prototype.fire = function (alvo){
   tiro.am = 100;
   tiro.width = 5;
   tiro.height = 5;
+  tiro.imgkey = "shot";
   this.shots.push(tiro);
   alvo.cooldown = 1;
 }
