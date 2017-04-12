@@ -13,7 +13,8 @@
       var eCanvas = document.getElementsByTagName("canvas")[0];
       var ctx = eCanvas.getContext("2d");
 
-
+      var imgPC = new Image();
+      imgPC.src = "images/player_ship.png";
 
       var fps = 120;
       var atual = new Date();
@@ -54,10 +55,9 @@
           }
         );
 
-        azul.desenhar(ctx);
+        azul.desenharImg(ctx, imgPC);
         level.desenhar(ctx);
         level.colidiuComTiros();
-
         anterior = atual;
       }
 
