@@ -12,6 +12,8 @@
     <canvas></canvas>
     <script>
       var eCanvas = document.getElementsByTagName("canvas")[0];
+      eCanvas.width = 600;
+      eCanvas.height = 380;
       var ctx = eCanvas.getContext("2d");
 
       var il = new ImageLoader();

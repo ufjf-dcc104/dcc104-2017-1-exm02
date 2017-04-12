@@ -7,8 +7,8 @@ function Sprite(){
   this.ax = 0;
   this.ay = 0;
   this.am = 0;
-  this.width = 15;
-  this.height = 15;
+  this.width = 32;
+  this.height = 32;
   this.angle = 0;
   this.vang = 0;
   this.color = "blue";
@@ -40,8 +40,10 @@ Sprite.prototype.desenharImg = function (ctx, img) {
   ctx.rotate(Math.PI/2);
   ctx.fillStyle = this.color;
   ctx.drawImage(img, -this.width/2, -this.height/2, this.width, this.height);
-  ctx.strokeStyle = "grey";
-  ctx.strokeRect(-this.width/2, -this.height/2, this.width, this.height);
+  if(this.debug){
+    ctx.strokeStyle = "grey";
+    ctx.strokeRect(-this.width/2, -this.height/2, this.width, this.height);
+  }
   ctx.restore();
 };
 
